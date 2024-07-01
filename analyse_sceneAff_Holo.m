@@ -30,7 +30,7 @@ preproc = ft_preprocessing(cfg, raw);
 cfg = [];
 cfg.viewmode   = 'vertical';
 cfg.continuous = 'yes';
-cfg = ft_databrowser(cfg, eeg); % artefact identification
+cfg = ft_databrowser(cfg, preproc); % artefact identification
 
 % ICA
 badchannels = {};
@@ -49,3 +49,4 @@ ft_databrowser(cfg, ic);
 cfg=[];
 cfg.component = [1];
 preclean = ft_rejectcomponent(cfg, ic);
+
