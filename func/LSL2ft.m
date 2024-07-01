@@ -26,5 +26,5 @@ cfg = [];
 %cfg.reref     = 'no';
 
 eeg = ft_preprocessing(cfg, eeg);
-eeg.trialinfo = tmpeeg(:,end)';
+eeg.LSLtime = [tmpeeg(:,end)'; (tmpeeg(:, end) - tmpeeg(1,end) )']'; % unix time stamp?
 
